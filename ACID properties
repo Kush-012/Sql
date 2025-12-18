@@ -6,10 +6,13 @@ D-durability
 Atomicity:
 => all or none 
 => Either the transaction occurs completely or it does not occur at all.
-operations either get abort or commit
+=> operations either get abort or commit
 
 Consistent:
 => database remains consistent before and after the transaction
+=> A has 500 B has 200 total=700
+=> A gives 100 to B
+=> A=400 and B=300 total=700
 
 Isolation:
 => means separation
