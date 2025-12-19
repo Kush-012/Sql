@@ -33,7 +33,7 @@ it has partial dependency bcz teacher depends only on subject_id not on both
 
 3NF=>
 be in 2 NF
-table not have transitive dependency(A->B B->C then A!>C) on candidate key.   (non prime->non prime)
+table not have transitive dependency(A->B B->C then A->C).   (non prime->non prime)
  
 
 | St_Id | Name  | Sub_Id | Sub  | Address |
@@ -46,7 +46,7 @@ table not have transitive dependency(A->B B->C then A!>C) on candidate key.   (n
 Primary Key: St_Id
 
 St_Id → Sub_Id
-Sub_Id → Sub
+Sub_Id → Sub   (non prime to non prime)
 St_Id → Sub   (indirectly)
 
 Transitive dependency (non prime to non prime)
@@ -78,8 +78,4 @@ Non-Prime Attribute: Teacher
 (Student, Course) → Teacher (LHS is key)
 Course → Teacher (LHS is not key)
 
-Table is not in BCNF
-
-
-
-
+Table is not in BCNF 
