@@ -22,7 +22,7 @@ score_id | student_id | subject_id | marks | teacher
 3          11             1          80      Java
 
 Primary Key: student_id+subject_id 
-Candidate Key: score_id, student_id+subject_id 
+Candidate Key: score_id, student_id+subject_id  (minimal)
 Super Keys: All attribute sets that contain either score_id or (student_id, subject_id)
 
 teacher depends only on subject_id          partial dependency
@@ -43,15 +43,17 @@ table not have transitive dependency(A->B B->C then A!>C) on candidate key.   (n
 |     3 | Sam   |     13 | JAVA | Delhi   |
 |     4 | Rita  |     12 | C++  | Mumbai  |
 
+Primary Key: St_Id
+
 St_Id → Sub_Id
 Sub_Id → Sub
 St_Id → Sub   (indirectly)
 
-Transitive dependency
+Transitive dependency (non prime to non prime)
 It should not be there
 
 BCNF=>
-
+Prime to non-prime (not possible)
 
 
 
