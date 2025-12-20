@@ -1,1 +1,123 @@
 
+Indexing is a technique used to speed up data retrieval by reducing the number of disk I/O operations.
+
+An index is a type of data structure that stores:
+
+Search Key	Data Reference
+Key value	Pointer to disk block / record
+
+Why Indexing?
+Faster SELECT queries
+Reduces disk access
+Improves query performance
+
+Indexing Methods
+1. Primary Index (Clustering Index)
+2. Secondary Index (Non-Clustering Index)
+
+1️⃣ Primary Indexing (Clustering Index)
+
+A primary index is created when the data file is sorted on the search key.
+The index order is the same as the data file order.
+
+Data is stored sequentially on disk.
+
+Dense vs Sparse Index in Primary Index
+🔹 Dense Index
+
+Index entry for every search key value
+
+More space required
+
+Search Key → Record Pointer
+1          → R1
+2          → R2
+3          → R3
+
+🔹 Sparse Index
+
+Index entry for some search key values
+
+Usually one entry per data block
+
+Less space required
+
+Search Key → Block Pointer
+1          → B1
+11         → B2
+21         → B3
+
+Primary Index Based On Attribute Type
+✅ Based on Key Attribute (Sparse Index)
+
+Data file sorted on primary key
+
+Index has one entry per block
+
+Search Key   Block No
+1            1
+11           2
+21           3
+9991         1000
+
+✅ Based on Non-Key Attribute (Dense Index)
+
+Data file sorted on non-key attribute
+
+Repeated values allowed
+
+Index entry for each unique value
+
+Dept ID   Block Pointer
+1         B1
+2         B1
+3         B2
+          B3
+
+
+2️⃣ Secondary Indexing (Non-Clustering Index)
+
+A secondary index is created when the data file is NOT sorted on the search key.
+It provides an extra access path to data.
+
+Search Key → Block Pointer
+1          → B1
+2          → B3
+3          → B2
+
+
+Search keys in index are sorted,
+Data file blocks are not sorted.
+
+Disk File Example
+Block B1:
+1
+19
+23
+
+Block B2:
+3
+19
+23
+
+Block B3:
+2
+25
+30
+
+Secondary Index with Repeated Values
+
+For non-key attributes, multiple records can have the same search key.
+
+Search Key → Pointer List
+1          → B1 → B2
+2          → B3
+
+
+Pointers are stored using a linked list.
+
+
+
+Primary Index → Data sorted → fewer index entries
+
+Secondary Index → Data unsorted → index entry for every record
