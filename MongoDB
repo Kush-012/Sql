@@ -1,0 +1,14 @@
+Introduction:
+1) It is a no-sql, document based database.
+2) Stores data in BSON format(Binary JSON).
+
+Terms Used:
+Database: Container for collections.
+Collection: Group of documents. Just like table in sql database.
+Document: Single record (JSON object). Like row in table.
+
+Mongoose is a library for MongoDB+NodeJS.
+It gives Schema support.
+
+Schema->Model 
+Model= Collection interface
