@@ -1,0 +1,3 @@
+delete: data is removed but space still remain reserved
+truncate: data is removed and space is also free.
+drop: delete data + remove table structure  
