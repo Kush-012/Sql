@@ -1,41 +1,43 @@
-CREATE TABLE employee (
-    emp_id VARCHAR(20) PRIMARY KEY,
-    emp_name VARCHAR(50),
-    salary INT,
-    dept_id VARCHAR(20),
-    manager_id VARCHAR(20)
-);
-INSERT INTO employee (emp_id, emp_name, salary, dept_id, manager_id) VALUES
-('E1', 'Rahul',   15000, 'D1',  'M1'),
-('E2', 'Manoj',   15000, 'D1',  'M1'),
-('E3', 'James',   55000, 'D2',  'M2'),
-('E4', 'Michael', 25000, 'D2',  'M2'),
-('E5', 'Ali',     20000, 'D10', 'M3'),
-('E6', 'Robin',   35000, 'D10', 'M3');
+1. Inner Join
+2. Outter Join
+            2(i)  Left outer join
+            2(ii) Right outer join
+3. Cross Join
+4. Self Join
 
-CREATE TABLE department (
-    dept_id VARCHAR(20) PRIMARY KEY,
-    dept_name VARCHAR(50)
-);
 
-INSERT INTO department (dept_id, dept_name) VALUES
-('D1', 'IT'),
-('D2', 'HR'),
-('D3', 'Finance'),
-('D4', 'Admin');
+INNER JOIN	Only matching records from both tables
+LEFT JOIN	All left table records + matching right records
+RIGHT JOIN	All right table records + matching left records
+FULL JOIN	All records from both tables
+CROSS JOIN	Every row of one table with every row of another / Cartesian product 
+SELF JOIN	A table joined with itself
 
--- Fetch the employee name and department name they belong to
-select e.emp_name,d.dept_name
-from employee e
-inner join department d on e.dept_id=d.dept_id; 
+SELECT columns
+FROM Table1
+INNER JOIN Table2
+ON Table1.column = Table2.column;
 
--- Fetch all employee name and department name they belong to
-select e.emp_name,d.dept_name
-from employee e
-left join department d on e.dept_id=d.dept_id; 
+SELECT columns
+FROM Table1
+LEFT JOIN Table2
+ON Table1.column = Table2.column;
 
--- Fetch employee name and all department name they belong to
-select e.emp_name,d.dept_name
-from employee e
-right join department d on e.dept_id=d.dept_id; 
+SELECT columns
+FROM Table1
+RIGHT JOIN Table2
+ON Table1.column = Table2.column;
 
+SELECT columns
+FROM Table1
+FULL OUTER JOIN Table2
+ON Table1.column = Table2.column;
+
+SELECT columns
+FROM Table1
+CROSS JOIN Table2;
+
+SELECT columns
+FROM TableName t1
+JOIN TableName t2
+ON t1.column = t2.column;
