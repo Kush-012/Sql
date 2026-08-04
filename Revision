@@ -1,0 +1,14 @@
+Triggers:
+Automatically executes when any specific event occurs in table like insert, delete
+
+Functions:
+return a value
+block of code that can be executed again and again
+
+Cursor:
+A Cursor is a pointer to the result set returned by a SQL query
+Implicit and Explicit 
+
+A Procedure is a named PL/SQL block that performs a specific task. Unlike a function,
+a procedure does not have to return a value. It is mainly used to perform operations 
+such as inserting, updating, deleting, or displaying data.
