@@ -12,3 +12,20 @@ Implicit and Explicit
 A Procedure is a named PL/SQL block that performs a specific task. Unlike a function,
 a procedure does not have to return a value. It is mainly used to perform operations 
 such as inserting, updating, deleting, or displaying data.
+
+EG:
+CREATE OR REPLACE PROCEDURE addition(
+    a IN NUMBER,
+    b IN NUMBER,
+    c OUT NUMBER
+)
+IS
+BEGIN
+    c := a + b;
+END;
+/
+
+in for input
+out for output
+in out for input output
+
