@@ -25,6 +25,46 @@ BEGIN
 END;
 /
 
+
+
+
+
+Practice Code:
+
+create or replace function addition (
+  a number, b number
+)
+return number
+is
+c number;
+begin
+  c:=a+b;
+  return c;
+end;
+/
+
+
+declare
+a number:=5;
+begin
+if a>5 then
+  dbms_output.put_line(a);
+else 
+  dbms_output.put_line('done');
+end if;
+end;
+/
+
+
+declare
+a number:=34;
+begin
+dbms_output.put_line(a);
+dbms_output.put_line(addition(3,4));
+end;
+/
+
+
 in for input
 out for output
 in out for input output
